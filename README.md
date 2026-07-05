@@ -1,258 +1,215 @@
 # 💳 Credit Card Fraud Detection using Machine Learning
 
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
-![XGBoost](https://img.shields.io/badge/XGBoost-Classifier-green)
-![License](https://img.shields.io/badge/License-MIT-brightgreen)
-
 ## 📌 Project Overview
 
-This project focuses on detecting fraudulent credit card transactions using Machine Learning.
+This project detects fraudulent credit card transactions using Machine Learning techniques. Since fraud datasets are highly imbalanced, multiple imbalance handling strategies and classification models were evaluated to improve fraud detection performance.
 
-Since fraud datasets are highly imbalanced, different imbalance handling techniques were applied before training multiple classification models.
-
-The project compares Logistic Regression, Random Forest, and XGBoost using Precision, Recall, F1-Score and PR-AUC. Threshold optimization and business cost-benefit analysis are also performed to deploy the best fraud detection model.
+The project includes data preprocessing, feature engineering, model building, threshold optimization, business cost-benefit analysis, and deployment using a machine learning pipeline.
 
 ---
 
 # 🎯 Objectives
 
-- Detect fraudulent transactions
-- Handle extreme class imbalance
-- Compare multiple ML algorithms
-- Optimize decision threshold
-- Perform business cost-benefit analysis
-- Build a deployment-ready pipeline
+- Detect fraudulent credit card transactions.
+- Handle severe class imbalance effectively.
+- Compare multiple machine learning models.
+- Optimize the classification threshold.
+- Evaluate the financial impact using business metrics.
+- Build a deployment-ready machine learning pipeline.
 
 ---
 
-# 📂 Dataset Information
+# 📂 Dataset
 
-- Dataset: Credit Card Fraud Detection
-- Total Transactions: 50,000
-- Fraud Class: Highly Imbalanced
-- Target Variable:
-  - 0 → Legitimate
-  - 1 → Fraud
+- **Dataset:** Credit Card Fraud Detection
+- **Target Variable:**
+  - `0` → Legitimate Transaction
+  - `1` → Fraudulent Transaction
+- Highly imbalanced dataset requiring special handling techniques.
 
 ---
 
 # 🚀 Project Workflow
 
-## ✅ Step 1 – Problem Framing & Theory
+## 📖 Step 1 – Problem Framing & Theory
 
-- Why Accuracy is misleading
-- Precision vs Recall
-- PR-AUC
-- Class imbalance
-- Business impact
+This section explains why accuracy is not a suitable metric for fraud detection and introduces Precision, Recall, F1-Score, PR-AUC, class imbalance handling, and the business impact of fraud.
 
-📷 Screenshot
-
-![Step1](images/step1.png)
+<p align="center">
+<img src="images/step1.jpg" width="850">
+</p>
 
 ---
 
-## ✅ Step 2 – Dataset Loading & EDA
-
-- Load Dataset
-- Dataset Information
-- Missing Values
-- Duplicate Values
-- Class Distribution
-- Feature Analysis
-
-📷 Screenshot
-
-![EDA](images/eda.png)
-
----
-
-## ✅ Step 3 – Data Preprocessing
+## 📊 Step 2 – Dataset Loading & Exploratory Data Analysis (EDA)
 
 Performed:
 
-- Log Transformation
-- Feature Engineering
-- Standard Scaling
-- Train-Test Split
-- SMOTE
-- Random Undersampling
-- Class Weight
+- Loaded the dataset
+- Checked missing values
+- Checked duplicate values
+- Analyzed target distribution
+- Explored important features
+- Visualized class imbalance
 
-📷 Screenshot
-
-![Preprocessing](images/preprocessing.png)
+<p align="center">
+<img src="images/eda.jpg" width="850">
+</p>
 
 ---
 
-## ✅ Step 4 – Logistic Regression
+## ⚙️ Step 3 – Data Preprocessing & Feature Engineering
 
-Three Logistic Regression models were compared:
+Performed:
+
+- Log transformation
+- Feature engineering
+- Standard scaling
+- Train-test split
+- SMOTE oversampling
+- Random undersampling
+- Class weight balancing
+
+<p align="center">
+<img src="images/preprocessing.jpg" width="850">
+</p>
+
+---
+
+## 🤖 Step 4 – Logistic Regression
+
+Three Logistic Regression models were trained and compared:
 
 - Original Dataset
 - Class Weight Balanced
 - SMOTE Dataset
 
-Evaluation Metrics
+Evaluation Metrics:
 
 - Precision
 - Recall
-- F1 Score
+- F1-Score
 - PR-AUC
 
-📷 Screenshot
-
-![LR](images/logistic.png)
+<p align="center">
+<img src="images/logistic.jpg" width="850">
+</p>
 
 ---
 
-## ✅ Step 5 – Random Forest
+## 🌲 Step 5 – Random Forest
 
 Random Forest was trained using the best imbalance strategy.
 
-Model Parameters
+Model Configuration:
 
 - n_estimators = 100
 - class_weight = balanced
 - random_state = 42
 
-Evaluation
+Feature importance and Precision-Recall curve were also analyzed.
 
-- Precision
-- Recall
-- F1 Score
-- PR-AUC
-
-Feature Importance was also plotted.
-
-📷 Screenshot
-
-![RF](images/randomforest.png)
+<p align="center">
+<img src="images/randomforest.jpg" width="850">
+</p>
 
 ---
 
-## ✅ Step 6 – XGBoost
+## 🚀 Step 6 – XGBoost
+
+Implemented:
 
 ### Baseline Model
 
-Parameters
-
-- n_estimators = 200
-- learning_rate = 0.1
-- max_depth = 4
+- XGBClassifier
 
 ### Hyperparameter Tuning
 
-RandomizedSearchCV
+- RandomizedSearchCV
+- Cross Validation
 
-Optimized
+### Threshold Optimization
 
-- n_estimators
-- max_depth
-- learning_rate
-- subsample
-- colsample_bytree
-
-Threshold Optimization
-
-- Default Threshold
+- Default Threshold (0.5)
 - Best F1 Threshold
 - Recall ≥ 0.90 Threshold
 
-📷 Screenshot
-
-![XGB](images/xgboost.png)
+<p align="center">
+<img src="images/xgboost.jpg" width="850">
+</p>
 
 ---
 
-## ✅ Step 7 – Model Comparison
+## 📈 Step 7 – Model Evaluation & Comparison
 
-Compared
+Compared the following models:
 
 - Logistic Regression
 - Random Forest
 - XGBoost Baseline
 - Tuned XGBoost
+- Tuned XGBoost (Best F1 Threshold)
+- Tuned XGBoost (Recall ≥ 0.90 Threshold)
 
-Metrics
+Evaluation Metrics:
 
 - Precision
 - Recall
-- F1 Score
+- F1-Score
 - PR-AUC
 
-📷 Screenshot
-
-![Comparison](images/comparison.png)
+<p align="center">
+<img src="images/comparison.jpg" width="850">
+</p>
 
 ---
 
-## ✅ Step 8 – Business Analysis
+## 💼 Step 8 – Business Simulation & Cost-Benefit Analysis
 
-Business Metrics
+Business analysis was performed by calculating:
 
 - Money Saved
 - Investigation Cost
 - Money Lost
 - Net Benefit
 
-Threshold Sensitivity Analysis
+Threshold sensitivity analysis identified the threshold that maximized business value.
 
-Business Recommendation
-
-📷 Screenshot
-
-![Business](images/business.png)
-
----
-
-# 📈 Results
-
-| Model | Precision | Recall | F1 | PR-AUC |
-|--------|-----------|--------|----|--------|
-| Logistic Regression | Your Result | Your Result | Your Result | Your Result |
-| Random Forest | Your Result | Your Result | Your Result | Your Result |
-| XGBoost Baseline | Your Result | Your Result | Your Result | Your Result |
-| Tuned XGBoost | Your Result | Your Result | Your Result | Your Result |
+<p align="center">
+<img src="images/business.jpg" width="850">
+</p>
 
 ---
 
 # 🏆 Best Model
 
-✅ Tuned XGBoost
+**Tuned XGBoost** achieved the best overall performance.
 
-Reasons
+### Why?
 
+- High Precision
+- High Recall
+- Best F1-Score
 - Highest PR-AUC
-- Better Precision-Recall Balance
-- Best Business Benefit
-- Threshold Optimized
-
----
-
-# 💼 Business Impact
-
-Business analysis shows that using the optimized threshold reduces financial loss while maintaining a high fraud detection rate.
-
-The final threshold was selected based on both ML performance and business benefit.
+- Threshold optimized for fraud detection
+- Maximum business benefit
 
 ---
 
 # 📦 Deployment
 
-The final model was saved using
-
-```
-joblib.dump(pipeline,"fraud_detection_model.pkl")
-```
-
-The saved pipeline can be loaded using
+The final model was saved using a Scikit-learn Pipeline.
 
 ```python
 import joblib
 
 model = joblib.load("fraud_detection_model.pkl")
+```
+
+Predictions can be generated using:
+
+```python
+probability = model.predict_proba(X_test)
 ```
 
 ---
@@ -261,60 +218,82 @@ model = joblib.load("fraud_detection_model.pkl")
 
 ```
 credit-fraud-detection-supervised-learning/
-
-│── FraudDetection_SupervisedLearning.ipynb
-│── fraud_detection_model.pkl
-│── README.md
-│── requirements.txt
-│── summary_report.md
-│── images/
-│     ├── step1.png
-│     ├── eda.png
-│     ├── preprocessing.png
-│     ├── logistic.png
-│     ├── randomforest.png
-│     ├── xgboost.png
-│     ├── comparison.png
-│     └── business.png
+│
+├── FraudDetection_SupervisedLearning.ipynb
+├── fraud_detection_model.pkl
+├── README.md
+├── requirements.txt
+├── summary_report.md
+│
+└── images/
+    ├── step1.jpg
+    ├── eda.jpg
+    ├── preprocessing.jpg
+    ├── logistic.jpg
+    ├── randomforest.jpg
+    ├── xgboost.jpg
+    ├── comparison.jpg
+    └── business.jpg
 ```
-
----
-
-# ⚙️ Installation
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# ▶️ Run Project
-
-```bash
-jupyter notebook
-```
-
-Open
-
-```
-FraudDetection_SupervisedLearning.ipynb
-```
-
-Run all cells.
 
 ---
 
 # 🛠️ Technologies Used
 
 - Python
-- NumPy
 - Pandas
+- NumPy
 - Matplotlib
-- Scikit-Learn
-- Imbalanced-Learn
+- Scikit-learn
+- Imbalanced-learn
 - XGBoost
 - Joblib
 - Jupyter Notebook
+
+---
+
+# ▶️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/credit-fraud-detection-supervised-learning.git
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the notebook:
+
+```bash
+jupyter notebook
+```
+
+Open:
+
+```
+FraudDetection_SupervisedLearning.ipynb
+```
+
+Run all cells in sequence.
+
+---
+
+# 📌 Key Learnings
+
+- Handling imbalanced datasets
+- Feature engineering
+- Logistic Regression
+- Random Forest
+- XGBoost
+- Hyperparameter tuning
+- Threshold optimization
+- Precision-Recall analysis
+- Business cost-benefit evaluation
+- Model deployment using Scikit-learn Pipeline
 
 ---
 
@@ -322,10 +301,9 @@ Run all cells.
 
 **Abhiraj Medhat**
 
-Machine Learning Practical Project
-
+Machine Learning Practical Project  
 Red & White Skill Education
 
 ---
 
-⭐ If you like this project, don't forget to star the repository.
+⭐ If you found this project useful, consider starring the repository!
