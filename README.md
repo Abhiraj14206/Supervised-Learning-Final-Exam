@@ -36,7 +36,7 @@ The project includes data preprocessing, feature engineering, model building, th
 This section explains why accuracy is not a suitable metric for fraud detection and introduces Precision, Recall, F1-Score, PR-AUC, class imbalance handling, and the business impact of fraud.
 
 <p align="center">
-<img src="images/step1.jpg" width="850">
+<img src="images/step1.jpeg" width="850">
 </p>
 
 ---
@@ -53,7 +53,7 @@ Performed:
 - Visualized class imbalance
 
 <p align="center">
-<img src="images/eda.jpg" width="850">
+<img src="images/eda.jpeg" width="850">
 </p>
 
 ---
@@ -71,7 +71,7 @@ Performed:
 - Class weight balancing
 
 <p align="center">
-<img src="images/preprocessing.jpg" width="850">
+<img src="images/preprocessing.jpeg" width="850">
 </p>
 
 ---
@@ -92,7 +92,7 @@ Evaluation Metrics:
 - PR-AUC
 
 <p align="center">
-<img src="images/logistic.jpg" width="850">
+<img src="images/logistic.jpeg" width="850">
 </p>
 
 ---
@@ -110,7 +110,7 @@ Model Configuration:
 Feature importance and Precision-Recall curve were also analyzed.
 
 <p align="center">
-<img src="images/randomforest.jpg" width="850">
+<img src="images/randomforest.jpeg" width="850">
 </p>
 
 ---
@@ -135,7 +135,7 @@ Implemented:
 - Recall ≥ 0.90 Threshold
 
 <p align="center">
-<img src="images/xgboost.jpg" width="850">
+<img src="images/xgboost.jpeg" width="850">
 </p>
 
 ---
@@ -159,7 +159,7 @@ Evaluation Metrics:
 - PR-AUC
 
 <p align="center">
-<img src="images/comparison.jpg" width="850">
+<img src="images/comparison.jpeg" width="850">
 </p>
 
 ---
@@ -176,7 +176,7 @@ Business analysis was performed by calculating:
 Threshold sensitivity analysis identified the threshold that maximized business value.
 
 <p align="center">
-<img src="images/business.jpg" width="850">
+<img src="images/business.jpeg" width="850">
 </p>
 
 ---
