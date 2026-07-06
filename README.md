@@ -7,6 +7,9 @@ This project detects fraudulent credit card transactions using Machine Learning 
 The project includes data preprocessing, feature engineering, model building, threshold optimization, business cost-benefit analysis, and deployment using a machine learning pipeline.
 
 ---
+📺 **Presentation Video:**  
+👉 **https://drive.google.com/drive/folders/1PxcH4-Tk8_DrAttUAK9w8TMegtQx56yy?usp=sharing**
+
 
 # 🎯 Objectives
 
